@@ -16,24 +16,24 @@ O Message Broker se encarrega de passar essa mensagem para o Sistema B, que, por
 
 # Caracteristicas:
 1. Filas
-O que são: Filas são estruturas de dados que armazenam mensagens de forma ordenada, geralmente no modelo FIFO (First In, First Out), ou seja, a primeira mensagem a entrar é a primeira a ser processada.
-Função: Elas permitem que os produtores enviem mensagens sem a necessidade de os consumidores estarem prontos imediatamente para processá-las. Isso ajuda a garantir a continuidade do sistema mesmo quando há picos de carga ou problemas temporários com os consumidores.
+- O que são: Filas são estruturas de dados que armazenam mensagens de forma ordenada, geralmente no modelo FIFO (First In, First Out), ou seja, a primeira mensagem a entrar é a primeira a ser processada.
+- Função: Elas permitem que os produtores enviem mensagens sem a necessidade de os consumidores estarem prontos imediatamente para processá-las. Isso ajuda a garantir a continuidade do sistema mesmo quando há picos de carga ou problemas temporários com os consumidores.
 
 2. Produtores
-O que são: São os componentes ou serviços que criam mensagens e as enviam para a fila.
-Função: Eles são responsáveis por gerar dados ou eventos, encapsulando-os em mensagens que posteriormente serão consumidas por outros serviços (consumidores).
+- O que são: São os componentes ou serviços que criam mensagens e as enviam para a fila.
+- Função: Eles são responsáveis por gerar dados ou eventos, encapsulando-os em mensagens que posteriormente serão consumidas por outros serviços (consumidores).
 Detalhe Importante: Os produtores não têm controle sobre quando suas mensagens serão processadas. Eles apenas "empurram" as mensagens para a fila e seguem seu trabalho.
 
 3. Consumidores
-O que são: São os componentes ou serviços que recuperam as mensagens da fila e as processam.
-Função: Eles são responsáveis por realizar a lógica de negócio ou o processamento das mensagens. Um consumidor pode ser um serviço que, por exemplo, envia e-mails, processa dados, ou atualiza um banco de dados, com base nas informações contidas na mensagem.
+- O que são: São os componentes ou serviços que recuperam as mensagens da fila e as processam.
+- Função: Eles são responsáveis por realizar a lógica de negócio ou o processamento das mensagens. Um consumidor pode ser um serviço que, por exemplo, envia e-mails, processa dados, ou atualiza um banco de dados, com base nas informações contidas na mensagem.
 
 
 4. Tópicos
-O que são: Tópicos são categorias ou canais dentro de uma fila que permitem a classificação e o roteamento das mensagens. Eles são usados para definir o "assunto" ou o tipo da mensagem, facilitando o direcionamento para os consumidores certos.
-Diferença para Filas: Ao contrário das filas, onde cada mensagem é processada por um consumidor, em sistemas baseados em tópicos (como o Kafka ou o Pub/Sub), várias aplicações podem "assinar" o mesmo tópico e processar a mesma mensagem simultaneamente.
+- O que são: Tópicos são categorias ou canais dentro de uma fila que permitem a classificação e o roteamento das mensagens. Eles são usados para definir o "assunto" ou o tipo da mensagem, facilitando o direcionamento para os consumidores certos.
+- Diferença para Filas: Ao contrário das filas, onde cada mensagem é processada por um consumidor, em sistemas baseados em tópicos (como o Kafka ou o Pub/Sub), várias aplicações podem "assinar" o mesmo tópico e processar a mesma mensagem simultaneamente.
 
 5. Partições
-O que são: Em sistemas distribuídos, como o Kafka, os tópicos são subdivididos em partições. Cada partição é uma coleção de mensagens de um mesmo tópico.
-Função: As partições permitem escalabilidade horizontal, dividindo o trabalho entre diferentes servidores (ou brokers). Cada partição pode ser armazenada e processada de forma independente.
-Vantagem: Isso aumenta a capacidade de paralelismo no consumo e armazenamento de mensagens, garantindo alta disponibilidade e redundância. Quando uma partição falha, outra pode assumir seu lugar, ou suas mensagens podem ser reprocessadas a partir do log da partição.
+- O que são: Em sistemas distribuídos, como o Kafka, os tópicos são subdivididos em partições. Cada partição é uma coleção de mensagens de um mesmo tópico.
+- Função: As partições permitem escalabilidade horizontal, dividindo o trabalho entre diferentes servidores (ou brokers). Cada partição pode ser armazenada e processada de forma independente.
+- Vantagem: Isso aumenta a capacidade de paralelismo no consumo e armazenamento de mensagens, garantindo alta disponibilidade e redundância. Quando uma partição falha, outra pode assumir seu lugar, ou suas mensagens podem ser reprocessadas a partir do log da partição.

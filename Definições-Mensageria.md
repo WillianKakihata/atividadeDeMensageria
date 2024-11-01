@@ -37,3 +37,6 @@ Detalhe Importante: Os produtores não têm controle sobre quando suas mensagens
 - O que são: Em sistemas distribuídos, como o Kafka, os tópicos são subdivididos em partições. Cada partição é uma coleção de mensagens de um mesmo tópico.
 - Função: As partições permitem escalabilidade horizontal, dividindo o trabalho entre diferentes servidores (ou brokers). Cada partição pode ser armazenada e processada de forma independente.
 - Vantagem: Isso aumenta a capacidade de paralelismo no consumo e armazenamento de mensagens, garantindo alta disponibilidade e redundância. Quando uma partição falha, outra pode assumir seu lugar, ou suas mensagens podem ser reprocessadas a partir do log da partição.
+
+6. Brokers
+- O que são: Atuam como intermediário, entre produtores e consumidores, ele basicamente gerencia a fila se o consumidor recebeu a mensagem do produtor.
